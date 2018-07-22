@@ -1,0 +1,13 @@
+version: '2'
+services:
+  mysandbox:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        user: developer
+    env_file: env.txt
+    volumes:
+      - .:/home/developer
+      - ~/.ssh:/home/developer/.ssh
+      - ~/.aws:/home/developer/.aws
